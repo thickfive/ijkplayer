@@ -115,7 +115,8 @@ echo "[*] config arch $FF_ARCH"
 echo "===================="
 
 FF_BUILD_NAME="unknown"
-FF_XCRUN_PLATFORM="iPhoneOS"
+# FF_XCRUN_PLATFORM="iPhoneOS"
+FF_XCRUN_PLATFORM="iPhoneSimulator"
 FF_XCRUN_OSVERSION=
 FF_GASPP_EXPORT=
 FF_DEP_OPENSSL_INC=
@@ -153,7 +154,7 @@ elif [ "$FF_ARCH" = "armv7s" ]; then
 elif [ "$FF_ARCH" = "arm64" ]; then
     FF_BUILD_NAME="ffmpeg-arm64"
     FF_BUILD_NAME_OPENSSL=openssl-arm64
-    FF_XCRUN_OSVERSION="-miphoneos-version-min=8.0"
+    FF_XCRUN_OSVERSION="-mios-simulator-version-min=8.0"
     FF_XCODE_BITCODE="-fembed-bitcode"
     FFMPEG_CFG_FLAGS="$FFMPEG_CFG_FLAGS $FFMPEG_CFG_FLAGS_ARM"
     FF_GASPP_EXPORT="GASPP_FIX_XCODE5=1"
